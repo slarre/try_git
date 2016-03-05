@@ -1,0 +1,63 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "2.0.0",
+        "title": "TM900"
+    },
+    "paths": {
+        "/init/serialize": {
+            "post": {
+                "description": "",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "Serialization data",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/serialize"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "serialize": {
+            "type": "object",
+            "required": [
+                "factory_id",
+                "brand_id",
+                "model_id",
+                "serial_number"
+            ],
+            "properties": {
+                "factory_id": {
+                    "type": "string",
+                    "minLength": 2,
+                    "maxLength": 2
+                },
+                "brand_id": {
+                    "type": "string",
+                    "minLength": 2,
+                    "maxLength": 2
+                },
+                "model_id": {
+                    "type": "string",
+                    "minLength": 2,
+                    "maxLength": 2
+                },
+                "serial_number": {
+                    "type": "string",
+                    "minLength": 10,
+                    "maxLength": 10
+                }
+            }
+        }
+    }
+}
